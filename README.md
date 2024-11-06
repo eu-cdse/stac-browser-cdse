@@ -1,4 +1,4 @@
-# STAC Browser <!-- omit in toc -->
+# STAC Browser (for CDSE) <!-- omit in toc -->
 
 This is a full-fledged [Spatio-Temporal Asset Catalog (STAC)](https://github.com/radiantearth/stac-spec) browser for STAC APIs and static STAC catalogs.
 
