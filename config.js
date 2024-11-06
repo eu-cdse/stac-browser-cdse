@@ -1,34 +1,27 @@
+const TITLE = "Copernicus Data Space Ecosystem (CDSE) - STAC API";
 export default {
-  catalogUrl: null,
-  catalogTitle: null,
-  catalogTitleAfterImage: null,
-  catalogImage: null,
-  allowExternalAccess: true, // Must be true if catalogUrl is not given
-  allowedDomains: [],
+  catalogUrl: "https://stac.dataspace.copernicus.eu/v1/",
+  catalogTitle: TITLE,
+  catalogTitleAfterImage: "STAC API",
+  catalogImage: "https://dataspace.copernicus.eu/themes/custom/copernicus/logo.svg",
+  allowExternalAccess: false, // Must be true if catalogUrl is not given
+  allowedDomains: [
+    "copernicus.eu"
+  ],
   enforcedColorMode: "auto",
   detectLocaleFromBrowser: true,
   storeLocale: true,
   locale: "en",
   fallbackLocale: "en",
   supportedLocales: [
-    "ar",
     "de",
-//  "de-CH",
     "es",
     "en",
-//  "en-GB",
-//  "en-US",
     "fr",
-//  "fr-CA",
-//  "fr-CH",
     "it",
-//  "it-CH",
     "ro",
     "ru",
-    "ja",
     "pt",
-//  "pt-BR",
-    "id",
     "pl",
     "sv"
   ],
@@ -43,7 +36,7 @@ export default {
   pathPrefix: "/",
   historyMode: "history",
   cardViewMode: "cards",
-  defaultCollectionSort: "title",
+  defaultCollectionSort: null,
   defaultItemSort: null,
   showKeywordsInItemCards: false,
   showKeywordsInCatalogCards: false,
@@ -58,8 +51,33 @@ export default {
   requestHeaders: {},
   requestQueryParameters: {},
   socialSharing: ['email', 'bsky', 'mastodon', 'x'],
-  preprocessSTAC: null,
-  authConfig: null,
+  preprocessSTAC: (stac, state, getters) => {
+    if (getters.toBrowserPath(stac.getAbsoluteUrl()) === '/') {
+      stac.title = TITLE;
+    }
+    return stac;
+  },
+  authConfig: {
+    type: "openIdConnect",
+    openIdConnectUrl:"https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+  },
   crs: {},
-  footerLinks: null
+  footerLinks: [
+    {
+      label: 'Contact',
+      url: 'https://dataspace.copernicus.eu/about#contact-form'
+    },
+    {
+      label: 'Terms and conditions',
+      url: 'https://dataspace.copernicus.eu/terms-and-conditions'
+    },
+    {
+      label: 'Cookies policy',
+      url: 'https://dataspace.copernicus.eu/cookie-policy'
+    },
+    {
+      label: 'Privacy policy',
+      url: 'https://dataspace.copernicus.eu/privacy-policy'
+    }
+  ]
 };
