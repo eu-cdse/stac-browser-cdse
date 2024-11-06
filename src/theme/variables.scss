@@ -17,7 +17,7 @@
 // ─────────────────────────────────────────────────────────
 
 // STAC Browser custom variables
-$logo-height: 2rem;
+$logo-height: 3rem;
 // Margin between the main sections of the page (header, content, footer)
 $block-gap: 1rem;
 // Padding for the code blocks
@@ -74,12 +74,12 @@ $body-bg: white;
 $body-color: black;
 
 // Theme colors
-$primary:   #188191;
+$primary:   #0a4393;
 $secondary: #6c757d;
-$success:   #28a745;
-$info:      #3f5f7a;
-$warning:   #ffc107;
-$danger:    #dc3545;
+$success:   #77cc09;
+$info:      #0977cc;
+$warning:   #fabc20;
+$danger:    #fa2020;
 $light:     #f8f9fa; // light means muted
 $dark:      #343a40; // dark means highlighted
 
@@ -88,18 +88,14 @@ $h1-color: inherit;
 $subheadings-color: #6c757d; // h2 only
 
 // Link colors
-$link-color: #188191;
+$link-color: #175bbb;
 $link-hover-color: darken($link-color, 20%);
 
 @import 'bootstrap/scss/_variables';
 
 // Main/top header of the website
 $header: $primary;
-$header-background: linear-gradient(to bottom,
-  color-mix(in srgb, var(--sb-header) 85%, #fff),
-  var(--sb-header),
-  color-mix(in srgb, var(--sb-header) 85%, #000)
-);
+$header-background: var(--sb-header);
 $header-position: sticky; // sticky or static
 $header-font-size: 1.5rem;
 $header-font-weight: 600;
