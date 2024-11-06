@@ -1,9 +1,6 @@
-import { CRS } from 'leaflet';
 import STAC from './src/models/stac';
 import Utils from './src/utils';
 
-const USGS_ATTRIBUTION = 'USGS Astrogeology';
-const WMS = 'LWMSTileLayer';
 const XYZ = 'LTileLayer';
 
 const BASEMAPS = {
@@ -12,33 +9,6 @@ const BASEMAPS = {
     name: 'OpenStreetMap',
     is: XYZ,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.'
-  },
-  europa: {
-    baseUrl: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/europa_simp_cyl.map',
-    is: WMS,
-    name: 'USGS Europa',
-    attribution: USGS_ATTRIBUTION,
-    crs: CRS.EPSG4326,
-    format: 'image/png',
-    layers: 'GALILEO_VOYAGER'
-  },
-  mars: {
-    baseUrl: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map',
-    is: WMS,
-    name: 'USGS Mars',
-    attribution: USGS_ATTRIBUTION,
-    crs: CRS.EPSG4326,
-    format: 'image/png',
-    layers: 'MDIM21'
-  },
-  moon: {
-    baseUrl: 'https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/moon_simp_cyl.map',
-    is: WMS,
-    name: 'USGS Moon',
-    attribution: USGS_ATTRIBUTION,
-    crs: CRS.EPSG4326,
-    format: 'image/png',
-    layers: 'LROC_WAC'
   }
 };
 
