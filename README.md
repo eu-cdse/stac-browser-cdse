@@ -1,4 +1,4 @@
-# STAC Browser
+# STAC Browser (for CDSE)
 
 This is a [Spatio-Temporal Asset Catalog (STAC)](https://github.com/radiantearth/stac-spec) browser for static catalogs.
 Minimal support for APIs is implemented, but it not the focus of the Browser and may lead to issues.
@@ -20,7 +20,7 @@ If you care about STAC Browser and have some funds to support the future of STAC
 
 **Table of Contents:**
 
-- [STAC Browser](#stac-browser)
+- [STAC Browser (for CDSE)](#stac-browser-for-cdse)
   - [Examples](#examples)
   - [Get Started](#get-started)
     - [Private query parameters](#private-query-parameters)

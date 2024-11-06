@@ -1,0 +1,54 @@
+#stac-browser {
+  > header {
+    background-color: map-get($theme-colors, "primary");
+    color: #fff;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 5px;
+    padding: 15px;
+    padding-bottom: 0;
+
+    .logos {
+      float: right;
+    }
+    @media screen and (max-width: 640px) {
+      .logos {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      background: linear-gradient(90deg, map-get($theme-colors, "success"), map-get($theme-colors, "warning"));
+      background-size: auto;
+      background-size: 100%;
+      position: absolute;
+      height: 6px;
+      left: 0;
+      right: 0;
+    }
+
+    .btn-outline-primary {
+      color: #fff;
+      border-color: #fff;
+
+      &:hover {
+        color: map-get($theme-colors, "primary");
+        background-color: #fff;
+      }
+    }
+
+    .lead > .in {
+      color: #fff;
+
+      a {
+        color: #fff;
+        background-color: map-get($theme-colors, "primary");
+
+        &:hover {
+          color: map-get($theme-colors, "success");
+        }
+      }
+    }
+  }
+}

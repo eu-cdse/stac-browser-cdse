@@ -1,35 +1,28 @@
+const TITLE = "Copernicus Data Space Ecosystem (CDSE) - STAC API";
 module.exports = {
-    catalogUrl: null,
-    catalogTitle: "STAC Browser",
-    allowExternalAccess: true, // Must be true if catalogUrl is not given
-    allowedDomains: [],
+    catalogUrl: "https://stac.dataspace.copernicus.eu/v1/",
+    catalogTitle: TITLE,
+    allowExternalAccess: false,
+    allowedDomains: [
+      "copernicus.eu"
+    ],
     detectLocaleFromBrowser: true,
     storeLocale: true,
     locale: "en",
     fallbackLocale: "en",
     supportedLocales: [
         "de",
-        "ar",
-//      "de-CH",
         "es",
         "en",
-//      "en-GB",
-//      "en-US",
         "fr",
-//      "fr-CA",
-//      "fr-CH",
         "it",
-//      "it-CH",
         "ro",
-        "ja",
-        "pt",
-//      "pt-BR"
-        "id"
+        "pt"
     ],
     apiCatalogPriority: null,
-    useTileLayerAsFallback: true,
+    useTileLayerAsFallback: false,
     displayGeoTiffByDefault: false,
-    buildTileUrlTemplate: ({href, asset}) => "https://tiles.rdnt.io/tiles/{z}/{x}/{y}@2x?url=" + encodeURIComponent(href),
+    buildTileUrlTemplate: null,
     stacProxyUrl: null,
     pathPrefix: "/",
     historyMode: "history",
@@ -48,6 +41,14 @@ module.exports = {
     requestHeaders: {},
     requestQueryParameters: {},
     socialSharing: ['email', 'bsky', 'mastodon', 'x'],
-    preprocessSTAC: null,
-    authConfig: null
+    preprocessSTAC: stac => {
+        if (stac.getBrowserPath() === '/') {
+            stac.title = TITLE;
+        }
+        return stac;
+    },
+    authConfig: {
+        type: "openIdConnect",
+        openIdConnectUrl:"https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+    }
 };
