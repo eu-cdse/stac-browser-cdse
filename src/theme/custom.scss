@@ -1,0 +1,39 @@
+#stac-browser {
+  > header {
+  
+    > .site {
+      > .col-md-12 {
+        > .title {
+          a {
+            color: #fff;
+          }
+
+          @media screen and (max-width: 1280px) {
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    > .page {
+      padding-top: 0;
+
+      > .col-md-12 {
+        padding-top: 1.25rem;
+      }
+
+      &::before {
+        content: "";
+        background: linear-gradient(90deg, map-get($theme-colors, "success"), map-get($theme-colors, "warning"));
+        background-size: auto;
+        background-size: 100%;
+        position: absolute;
+        height: 6px;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}
