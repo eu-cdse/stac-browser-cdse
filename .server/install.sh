@@ -1,9 +1,20 @@
 sudo apt update
 sudo apt install -y nodejs npm apache2 snapd cron
+
+# Update nodejs to latest lts as the default version in ubuntu is too old
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+
+# Install certbot for SSL certificate management
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+# Get STAC Browser
 cd ~
 git clone https://github.com/eu-cdse/stac-browser-cdse/
+
+# Configure Apache and SSL
 sudo a2enmod rewrite
 cp ./stac-browser-cdse/.server/browser.conf /etc/apache2/sites-available/000-default.conf
 sudo certbot --apache -d browser.stac.dataspace.copernicus.eu
@@ -16,3 +27,6 @@ sudo crontab -e
 # in crontab, add the following lines (without the leading '# '):
 # 0 3 * * * /usr/bin/certbot renew -n
 # 0 4 * * * /bin/systemctl restart apache2
+
+# Build STAC Browser etc.
+bash update.sh
