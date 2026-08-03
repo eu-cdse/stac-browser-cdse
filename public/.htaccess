@@ -5,8 +5,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # Serve ACME (Let's Encrypt) challenges directly, never rewrite them to the SPA
+  RewriteRule ^\.well-known/ - [L]
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . index.html [L]
+  RewriteRule . /index.html [L]
 </IfModule>
