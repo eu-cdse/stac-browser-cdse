@@ -29,4 +29,5 @@ sudo crontab -e
 # 0 4 * * * /bin/systemctl restart apache2
 
 # Build STAC Browser etc.
+cd ./stac-browser-cdse/.server/
 bash update.sh
