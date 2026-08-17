@@ -27,13 +27,13 @@ export default function configureBasemap(stac, i18n, store) {
   if (store.state.colorMode === 'dark') {
     targets = targets.map(t => {
       const darkVariant = `${t}-dark`;
-      return Array.isArray(BASEMAPS[darkVariant]) ? darkVariant : t;
+      return Array.isArray(basemaps[darkVariant]) ? darkVariant : t;
     });
   }
 
   let layers = [];
   for (const target of targets) {
-    const maps = BASEMAPS[target.toLowerCase()];
+    const maps = basemaps[target];
     if (!Array.isArray(maps)) {
       continue;
     }
