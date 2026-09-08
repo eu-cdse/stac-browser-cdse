@@ -535,7 +535,7 @@ export default defineComponent({
       }
     },
     apiCollectionsState() {
-      return this.getApiChildren(this.parent);
+      return this.getApiChildren(this.parent, 'collections');
     },
     apiCollectionsFromStore() {
       const list = this.apiCollectionsState?.list;
