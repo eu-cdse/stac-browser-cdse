@@ -8,7 +8,7 @@ export default {
   allowedDomains: [
     "copernicus.eu"
   ],
-  enforcedColorMode: "auto",
+  enforcedColorMode: "light",
   detectLocaleFromBrowser: true,
   storeLocale: true,
   locale: "en",
