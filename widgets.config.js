@@ -51,7 +51,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-2-l2a"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-2-l2a"
               }
             ]
           },
@@ -100,7 +100,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-2-global-mosaics"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-2-global-mosaics"
               }
             ]
           },
@@ -149,7 +149,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
               }
             ]
           },
@@ -198,7 +198,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-global-mosaics"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-1-global-mosaics"
               }
             ]
           },
@@ -247,7 +247,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-slc"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-1-slc"
               }
             ]
           },
@@ -296,7 +296,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-3-sl-2-frp-nrt"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-3-sl-2-frp-nrt"
               }
             ]
           },
@@ -345,7 +345,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-3-sl-2-lst-ntc"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-3-sl-2-lst-ntc"
               }
             ]
           },
@@ -394,7 +394,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-5p-l2-so2-offl"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/sentinel-5p-l2-so2-offl"
               }
             ]
           },
@@ -443,7 +443,7 @@ export default {
               {
                 "rel": "self",
                 "type": "application/json",
-                "href": "https://stac.dataspace.copernicus.eu/v1/collections/clms_clcplus_lulucf-instance_europe_100m_yearly_v1"
+                "href": "https://stac.opensearch.dataspace.copernicus.eu/v1/collections/clms_clcplus_lulucf-instance_europe_100m_yearly_v1"
               }
             ]
           }
