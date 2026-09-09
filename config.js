@@ -1,6 +1,6 @@
 const TITLE = "Copernicus Data Space Ecosystem (CDSE) - STAC API";
 export default {
-  catalogUrl: "https://stac.dataspace.copernicus.eu/v1/",
+  catalogUrl: "https://stac.opensearch.dataspace.copernicus.eu/v1/",
   catalogTitle: TITLE,
   catalogTitleAfterImage: "STAC API",
   catalogImage: "https://dataspace.copernicus.eu/themes/custom/copernicus/logo.svg",
@@ -26,6 +26,8 @@ export default {
     "sv"
   ],
   apiCatalogPriority: null,
+  apiItemPriority: null,
+  mergeCatalogsAndCollections: false,
   useTileLayerAsFallback: false,
   displayGeoTiffByDefault: false,
   displayPreview: true,
