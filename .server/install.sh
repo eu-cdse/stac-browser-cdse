@@ -14,7 +14,7 @@ git checkout opensearch
 
 # Configure Apache and SSL
 sudo a2enmod rewrite
-cp ~/stac-browser-cdse/.server/browser.conf /etc/apache2/sites-available/000-default.conf
+sudo cp ~/stac-browser-cdse/.server/browser.conf /etc/apache2/sites-available/000-default.conf
 sudo apache2ctl configtest
 sudo service apache2 restart
 
