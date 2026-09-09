@@ -6,28 +6,18 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 source ~/.bashrc
 nvm install --lts
 
-# Install certbot for SSL certificate management
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-
 # Get STAC Browser
 cd ~
 git clone https://github.com/eu-cdse/stac-browser-cdse/
+cd ~/stac-browser-cdse
+git checkout opensearch
 
 # Configure Apache and SSL
 sudo a2enmod rewrite
-cp ./stac-browser-cdse/.server/browser.conf /etc/apache2/sites-available/000-default.conf
-sudo certbot --apache -d browser.stac.opensearch.dataspace.copernicus.eu
-# Also issue RSA certificate in addition to the default ECDSA certificate for older corporate firewalls etc.
-sudo certbot certonly --webroot -w /var/www/html -d browser.stac.opensearch.dataspace.copernicus.eu --key-type rsa --cert-name browser.stac.opensearch.dataspace.copernicus.eu-rsa -n
-sudo sed -i '/SSLCertificateKeyFile/a SSLCertificateFile /etc/letsencrypt/live/browser.stac.opensearch.dataspace.copernicus.eu-rsa/fullchain.pem\nSSLCertificateKeyFile /etc/letsencrypt/live/browser.stac.opensearch.dataspace.copernicus.eu-rsa/privkey.pem' /etc/apache2/sites-available/000-default-le-ssl.conf
+cp ~/stac-browser-cdse/.server/browser.conf /etc/apache2/sites-available/000-default.conf
 sudo apache2ctl configtest
 sudo service apache2 restart
-sudo crontab -e
-# in crontab, add the following lines (without the leading '# '):
-# 0 3 * * * /usr/bin/certbot renew -n
-# 0 4 * * * /bin/systemctl restart apache2
 
 # Build STAC Browser etc.
-cd ./stac-browser-cdse/.server/
+cd ~/stac-browser-cdse/.server/
 bash update.sh

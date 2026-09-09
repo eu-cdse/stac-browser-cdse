@@ -27,7 +27,7 @@ export default {
   ],
   apiCatalogPriority: null,
   apiItemPriority: null,
-  mergeCatalogsAndCollections: false,
+  mergeCatalogsAndCollections: true,
   useTileLayerAsFallback: false,
   displayGeoTiffByDefault: false,
   displayPreview: true,
