@@ -446,6 +446,55 @@ export default {
                 "href": "https://stac.dataspace.copernicus.eu/v1/collections/clms_clcplus_lulucf-instance_europe_100m_yearly_v1"
               }
             ]
+          },
+          {
+            "type": "Collection",
+            "stac_version": "1.1.0",
+            "id": "clms_ndvi_global_300m_10daily_v3_cog",
+            "title": "CLMS Normalized Difference Vegetation Index (NDVI) Global 300m 10-daily v3 (COG)",
+            "description": "NDVI is an indicator of the greenness of the biomes. Every 10-days estimates are available in near real time at global scale in the spatial resolution of about 300 m from January 2014 to the present.",
+            "license": "other",
+            "extent": {
+              "spatial": {
+                "bbox": [
+                  [
+                    -180,
+                    -90,
+                    180,
+                    90
+                  ]
+                ]
+              },
+              "temporal": {
+                "interval": [
+                  [
+                    "2014-01-21T00:00:00.000Z",
+                    null
+                  ]
+                ]
+              }
+            },
+            "assets": {
+              "thumbnail": {
+                "href": "https://s3.waw3-2.cloudferro.com/swift/v1/stac-png/clms_ndvi_global_300m_10daily_v3.jpg",
+                "type": "image/jpeg",
+                "title": "CLMS Normalized Difference Vegetation Index (NDVI) Global 300m 10-daily v3 (COG) Thumbnail",
+                "roles": [
+                  "thumbnail"
+                ],
+                "proj:shape": [
+                  360,
+                  640
+                ]
+              }
+            },
+            "links": [
+              {
+                "rel": "self",
+                "type": "application/json",
+                "href": "https://stac.dataspace.copernicus.eu/v1/collections/clms_ndvi_global_300m_10daily_v3_cog"
+              }
+            ]
           }
         ]
       }
