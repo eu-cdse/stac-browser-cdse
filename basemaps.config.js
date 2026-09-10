@@ -1,5 +1,3 @@
-import { Collection, STAC } from 'stac-js';
-
 // For documentation see https://github.com/radiantearth/stac-browser/blob/main/docs/basemaps.md
 
 const BASEMAPS = {
@@ -27,13 +25,13 @@ export default function configureBasemap(stac, i18n, store) {
   if (store.state.colorMode === 'dark') {
     targets = targets.map(t => {
       const darkVariant = `${t}-dark`;
-      return Array.isArray(basemaps[darkVariant]) ? darkVariant : t;
+      return Array.isArray(BASEMAPS[darkVariant]) ? darkVariant : t;
     });
   }
 
   let layers = [];
   for (const target of targets) {
-    const maps = basemaps[target];
+    const maps = BASEMAPS[target];
     if (!Array.isArray(maps)) {
       continue;
     }
