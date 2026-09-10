@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Send only the origin as Referer: the CDSE WAF rejects requests whose
+         Referer contains a URL in a query parameter, which the OIDC login
+         callback does (iss=https%3A%2F%2Fidentity.dataspace.copernicus.eu...),
+         blocking all asset loads on /auth and thereby the whole login flow. -->
+    <meta name="referrer" content="strict-origin">
     <meta name="description" id="meta-description" content="">
     <meta name="og:type" content="website">
     <meta name="og:url" id="og-url" content="<%- catalogUrl %>">
