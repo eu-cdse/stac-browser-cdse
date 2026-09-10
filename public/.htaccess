@@ -6,6 +6,10 @@
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
+  # Never rewrite asset requests to index.html: a missing asset must
+  # return a 404, otherwise browsers may cache the HTML fallback as
+  # the content of a script or style URL.
+  RewriteRule ^assets/ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
